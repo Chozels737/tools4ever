@@ -1,8 +1,9 @@
 <?php
+
 require 'database.php';
 
 //de sql query
-$sql = "SELECT forename, surname FROM users";
+$sql = "SELECT * FROM tools";
 
 //hier wordt de query uitgevoerd met de database
 $result = mysqli_query($conn,$sql);
@@ -14,7 +15,7 @@ $result = mysqli_query($conn,$sql);
  * voor bijvoorbeeld producten $all_products heten.
  * Maar dit kies je zelf
  */
-$all_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
 
@@ -24,6 +25,10 @@ $all_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
  * maar je kunt ook andere HTML-**tags** gebruiken
  */
 ?>
-<?php foreach($users as $user): ?>
-  <p><?php echo $user["voornaam"] ?></p>
+<?php foreach($all_tools as $tool): ?>
+  <p><?php echo $tool["tool_id"] ?></p>
+  <p><?php echo $tool["tool_name"] ?></p>
+  <p><?php echo $tool["tool_category"] ?></p>
+  <p><?php echo $tool["tool_price"] ?></p>
+  <p><?php echo $tool["tool_brand"] ?></p>
 <?php endforeach; ?>
