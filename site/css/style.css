@@ -1,0 +1,15 @@
+table, th, td {
+    border:1px solid black;
+    padding: 5px;
+}
+
+.tabl{
+    justify-content: center;
+    display: flex;
+    padding-top: 60px;
+}
+.title{
+    justify-content: center;
+    display: flex;
+    font-size: x-large;
+}
