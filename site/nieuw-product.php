@@ -15,8 +15,8 @@
             <input type="text" name="naamProduct" id="naamProduct">
         </div>
         <div class="form-groep">
-            <label for="CategorieProduct">Categorie Product</label>
-            <input type="text" name="CategorieProduct" id="CategorieProduct">
+            <label for="categorieProduct">Categorie Product</label>
+            <input type="text" name="categorieProduct" id="categorieProduct">
         </div>
         <div class="form-groep">
             <label for="prijsProduct">prijs Product</label>
