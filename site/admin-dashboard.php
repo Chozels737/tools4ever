@@ -1,13 +1,17 @@
-<?php 
-
+<?php
 
 session_start();
 
 if(!isset($_SESSION['isIngelogd'])){
-    header("location: inloggen.php");
+    header('location: inloggen.php');
     exit;
 }
-    ?>
+
+if($_SESSION['role'] != "admin"){
+    header('location: store.php');
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +22,6 @@ if(!isset($_SESSION['isIngelogd'])){
     <title>Document</title>
 </head>
 <body>
-    <h1><?php echo 'Hallo!' . $_SESSION['voornaam']; ?></h1>
-    <div>
-        <a href="logout.php">logout</a>
-    </div>
+    Welkom beste administrator
 </body>
 </html>

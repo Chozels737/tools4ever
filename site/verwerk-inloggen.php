@@ -25,11 +25,30 @@ if(!is_array($user)){
 if($user['password'] === $_POST['password']);{
     session_start();
     $_SESSION
+
     ['isIngelogd'] = true;
     $_SESSION['voornaam'] = $user['firstname'];
 
-    header("location: dashboard.php");
-    exit;
+    $_SESSION['role'] = $user['role'];
+
+switch ($user['role']) {
+        case 'admin':
+            header('location: admin-dashboard.php');
+            exit;
+        break;
+        case 'employee':
+            header('location: employee-dashboard.php');
+            exit;
+        break;
+        case 'customer':
+            header('location: store.php');
+            exit;
+        break;
+        default:
+            header('location: store.php');
+            exit;
+        break;
+    }
 }
 
 header("location: inloggen.php");
