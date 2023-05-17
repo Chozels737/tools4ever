@@ -1,6 +1,6 @@
 <?php
 $zoekterm = $_POST['zoekveld'];
- if (empty($zoekterm)) {
+ if (empty($zoekterm)) 
     header("location: index.php");
      exit;
  require 'database.php';

@@ -22,7 +22,9 @@ if(!is_array($user)){
     header("location: inloggen.php");
 }
 
-if($user['password'] === $_POST['password']);{
+
+if(password_verify($password, $user['password'])){
+
     session_start();
     $_SESSION
 
@@ -31,7 +33,7 @@ if($user['password'] === $_POST['password']);{
 
     $_SESSION['role'] = $user['role'];
 
-switch ($user['role']) {
+    switch ($user['role']) {
         case 'admin':
             header('location: admin-dashboard.php');
             exit;
@@ -41,15 +43,14 @@ switch ($user['role']) {
             exit;
         break;
         case 'customer':
-            header('location: store.php');
+            header('location: index.php');
             exit;
         break;
         default:
-            header('location: store.php');
+            header('location: index.php');
             exit;
         break;
     }
 }
-
 header("location: inloggen.php");
 exit;

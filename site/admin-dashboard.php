@@ -11,6 +11,9 @@ if($_SESSION['role'] != "admin"){
     header('location: store.php');
     exit;
 }
+
+$timestamp = time();
+echo date('Y-D-M', $timestamp)
 ?>
 
 <!DOCTYPE html>
