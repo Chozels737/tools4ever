@@ -13,8 +13,13 @@ if($_SESSION['role'] != "admin"){
 }
 
 $timestamp = time();
-echo date('Y-D-M', $timestamp)
+echo date('Y-d-m', $timestamp)
 ?>
+
+<div>
+    De Datum van volgende week is .. 
+</div>
+
 
 <!DOCTYPE html>
 <html lang="en">
